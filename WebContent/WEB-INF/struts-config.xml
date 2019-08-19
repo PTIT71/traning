@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<struts-config>
+	<form-beans>
+		<form-bean name="user" type="com.thinhpvp.model.User" />
+	</form-beans>
+	
+	<action-mappings>
+		<action path="/add-user" type="com.thinhpvp.action.UserAction" name="user" parameter="addUser">
+		<forward name="addUser" path="/addUser.jsp"/>
+		</action>
+		
+		<action path="/delete-user" type="com.thinhpvp.action.UserAction" name="user" parameter="deleteUser">
+		<forward name="deleteUser" path="/deleteUser.jsp"/>
+		</action>
+		
+		<action path="/update-user" type="com.thinhpvp.action.UserAction" name="user" parameter="updateUser">
+		<forward name="updateUser" path="/updateUser.jsp"/>
+		</action>
+		
+		<action path="/welcome" type="org.apache.struts.actions.ForwardAction" parameter="/welcome.jsp">
+		
+		</action>
+	</action-mappings>
+</struts-config>
