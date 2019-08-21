@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <web-app>
-	<diplay-name>Web Application</diplay-name>
-	
 	 <!-- Processes application requests -->
 	  <servlet>
 	    <servlet-name>action</servlet-name>

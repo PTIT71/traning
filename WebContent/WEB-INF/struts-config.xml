@@ -1,20 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" 
+"http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
 <struts-config>
 	<form-beans>
-		<form-bean name="user" type="com.thinhpvp.model.User" />
+		<form-bean name="login" type="com.training.model.User" />
 	</form-beans>
 	
 	<action-mappings>
-		<action path="/add-user" type="com.thinhpvp.action.UserAction" name="user" parameter="addUser">
+	 	<action path="/login" type="com.training.action.UserAction" name="login" validate="true" input="/login.jsp">
+            <forward name="success" path="/updateUser.jsp" />
+        </action>
+		<action path="/add-user" type="com.thinhpvp.training.UserAction" name="user" parameter="addUser">
 		<forward name="addUser" path="/addUser.jsp"/>
 		</action>
 		
-		<action path="/delete-user" type="com.thinhpvp.action.UserAction" name="user" parameter="deleteUser">
+		<action path="/delete-user" type="com.training.action.UserAction" name="user" parameter="deleteUser">
 		<forward name="deleteUser" path="/deleteUser.jsp"/>
 		</action>
 		
-		<action path="/update-user" type="com.thinhpvp.action.UserAction" name="user" parameter="updateUser">
+		<action path="/update-user" type="com.training.action.UserAction" name="login" parameter="updateUser">
 		<forward name="updateUser" path="/updateUser.jsp"/>
 		</action>
 		
@@ -22,4 +26,5 @@
 		
 		</action>
 	</action-mappings>
+	<message-resources parameter="com.training.utils.ApplicationResources" />
 </struts-config>
